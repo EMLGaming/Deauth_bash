@@ -93,7 +93,7 @@ gnome-terminal -x sh -c "airodump-ng --essid '$name' -c $channel $wire""mon"
 		echo "\e[31m "
 		echo "would you like to look up a mac adress?"
 		echo " "
-		PS3="Enter your choise: "
+		PS3="Enter your choice: "
 		options=("yes" "no")
 		select opt in "${options[@]}"
 		do
