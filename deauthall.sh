@@ -4,7 +4,7 @@ function cleanup()
 {
 
 clear
-echo -e "\e[36mgetting out of monitor mode"
+echo -e "getting out of monitor mode"
 airmon-ng stop wlan0mon
 sleep 2
 ifconfig wlan0 up
@@ -12,9 +12,9 @@ clear
 echo "thanks for using my script"
 }
 
-echo -e "\e[36m "
+
 iwconfig
-echo -e "\e[31mtype the name of your wireless card\e[36m"
+echo -e "type the name of your wireless card"
 read wire
 
 ifconfig $wire down
