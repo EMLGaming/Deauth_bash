@@ -5,9 +5,9 @@ function cleanup()
 
 clear
 echo -e "getting out of monitor mode"
-airmon-ng stop wlan0mon
+airmon-ng stop $wire"mon"
 sleep 2
-ifconfig wlan0 up
+ifconfig $wire up
 clear
 echo "thanks for using my script"
 }
