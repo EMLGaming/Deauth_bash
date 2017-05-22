@@ -8,3 +8,5 @@ How to run the script:
 4. have fun
 
 Disclaimer this can be used illigaly and i don't condone that. 
+
+If you downloaded the script before monday 22th of may 2017 i would recommend to download it again becouse of all the changes.
