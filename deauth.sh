@@ -1,4 +1,12 @@
 #!/bin/bash
+
+# made by EMLGaming and thanks for using it
+# to run first type "chmod +x deauth.sh" and "chmod +x deauthall.sh" and then "./deauth.sh"
+# then you are all good to go and this script is made for moose
+# the script is not illegal but you can use it in a way that is illegal
+
+
+
 printf "\e[?25l"     
 width=$(tput cols) 
 height=$(tput lines)
@@ -11,7 +19,9 @@ tput cup 0 0
 
 
 function drawMenu(){
-	
+	echo "Made my EMLGaming"	
+
+
 	tput cup $((height/2-4)) $((width/2-10)) 
 	if [ $menuSelection -eq 0 ]
 	then
@@ -78,9 +88,9 @@ clear
 function update(){
 	
 	if [ $menuSelection -eq -1 ] 
-	then
+	then 
 
-		echo "TESTING: shouldn't be here"
+		echo " "
 	else 
 		case $1 in
 			UP)
@@ -168,8 +178,8 @@ clear
 gnome-terminal -x sh -c "airodump-ng --essid '$name' -c $channel $wire""mon" 
 				
 
-		echo -e "\e[31m  "
-		PS3="Would you like to lookup a mac adress (1 or 2) "
+		echo -e "\e[31mWould you like to lookup a mac adress (1 or 2)"
+		PS3="Type 1 or 2"
 		options=("yes" "no")
 		select opt in "${options[@]}"
 		do
@@ -215,6 +225,8 @@ function cleanup(){
 airmon-ng stop $wire"mon"
 ifconfig $wire up
 	reset
+echo "thanks for using my script"
+sleep 1
 	exit 255
 }
 
