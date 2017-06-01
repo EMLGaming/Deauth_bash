@@ -9,4 +9,4 @@ How to run the script:
 
 Disclaimer this can be used illegally and i don't condone that. 
 
-If you downloaded the script before monday 22th of may 2017 i would recommend to download it again becouse of all the changes.
+If you downloaded the script before monday 22th of may 2017 i would recommend to download it again because of all the changes.
